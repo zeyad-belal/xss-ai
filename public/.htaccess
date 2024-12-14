@@ -1,0 +1,19 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Prevent access to .htaccess
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+# Prevent access to files with extensions .json, .lock, .git
+<FilesMatch "\.(json|lock|git)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>

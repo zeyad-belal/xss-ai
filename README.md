@@ -1,51 +1,69 @@
 # XSS Vulnerability Scanner
 
-A web application that combines PHP and Machine Learning to detect potential XSS (Cross-Site Scripting) vulnerabilities in input text.
+A web application that scans input text for potential XSS (Cross-Site Scripting) vulnerabilities using pattern-based detection.
 
 ## Features
 
-- Hybrid ML model combining Random Forest and Logistic Regression
 - Real-time XSS vulnerability scanning
-- User-friendly web interface
-- Detailed confidence scores for detected vulnerabilities
+- Pattern-based detection of common XSS attack vectors
+- Confidence scoring
+- Detailed reporting of detected patterns
+- Mobile-responsive UI
 
-## Setup Instructions
+## Setup
 
-1. Install Python dependencies:
+1. Clone the repository:
 ```bash
+git clone <your-repo-url>
+cd rana
+```
+
+2. Set up Python virtual environment:
+```bash
+python3 -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-2. Start the ML service:
+3. Start the Python ML service:
 ```bash
 python ml_service.py
 ```
+The service will run on http://localhost:5001
 
-3. Set up a PHP server:
+4. Start the PHP server:
 ```bash
+cd public
 php -S localhost:8000
 ```
-
-4. Access the application at `http://localhost:8000`
-
-## Project Structure
-
-- `ml_service.py`: Python Flask service hosting the ML model
-- `xss_checker.php`: PHP integration with the ML service
-- `index.php`: Main web interface
-- `header.php`: Common header component
-- `footer.php`: Common footer component
-- `css/style.css`: Styling for the web interface
+The web interface will be available at http://localhost:8000
 
 ## Usage
 
-1. Open the web application in your browser
+1. Open http://localhost:8000 in your web browser
 2. Enter text in the input field
 3. Click "Scan for XSS"
-4. View the results showing whether XSS vulnerabilities were detected
+4. View the results, including:
+   - Whether XSS was detected
+   - Confidence level
+   - List of detected suspicious patterns
 
-## Notes
+## Dependencies
 
-- The ML model is trained on a basic dataset and can be improved with more training data
-- Make sure both the Python ML service and PHP server are running
-- The application requires PHP with curl extension enabled
+### Python
+- Flask
+- Flask-CORS
+- scikit-learn
+- numpy
+- requests
+
+### PHP
+- PHP 7.4+ with cURL extension
+
+### Frontend
+- Swiper.js
+- Font Awesome
+
+## License
+
+MIT License
