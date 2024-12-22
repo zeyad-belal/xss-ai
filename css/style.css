@@ -75,6 +75,15 @@ body {
     color: var(--main-color);
 }
 
+/* Menu Button Styles */
+.menu-btn {
+    display: none;
+    background: none;
+    font-size: 2.5rem;
+    color: var(--black);
+    cursor: pointer;
+}
+
 /* Scanner Section Styles */
 .scanner {
     padding: 3rem 0;
@@ -161,6 +170,23 @@ body {
     font-size: 1.6rem;
 }
 
+/* Footer Styles */
+.footer {
+    text-align: center;
+    padding: 2.5rem;
+    margin-top: 3rem;
+    border-top: var(--border);
+}
+
+.footer .credit {
+    font-size: 2rem;
+    color: var(--black);
+}
+
+.footer .credit span {
+    color: var(--main-color);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     html {
@@ -169,6 +195,10 @@ body {
 
     .header {
         padding: 1.5rem;
+    }
+
+    .menu-btn {
+        display: block;
     }
 
     .header .navbar {

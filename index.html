@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XSS Vulnerability Scanner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <a href="index.html" class="logo">Rana's Security Scanner</a>
+            <nav class="navbar">
+                <a href="index.html">home</a>
+                <a href="about.html">about</a>
+                <a href="pricing.html">pricing</a>
+                <a href="contact.html">contact</a>
+            </nav>
+        </header>
+
+        <section class="scanner">
+            <h1 class="heading">XSS Vulnerability Scanner</h1>
+            
+            <div class="scanner-container">
+                <form id="scanForm">
+                    <textarea name="input" placeholder="Enter text to scan for XSS vulnerabilities..." required></textarea>
+                    <button type="submit" class="btn">Scan for XSS</button>
+                </form>
+
+                <div class="result-container" style="display: none;">
+                    <h2>Scan Results:</h2>
+                    <div id="resultContent"></div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="credit">created by <span>Rana</span> | all rights reserved!</div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
